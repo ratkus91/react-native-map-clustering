@@ -168,7 +168,6 @@ export default class MapWithClustering extends Component {
 
         return (
             <MapView {...this.state.mapProps}
-                     region={this.state.region}
                      initialRegion={this.state.initRegion}
                      ref={(ref) => this._root = ref}
                      onRegionChangeComplete={(region) => {
