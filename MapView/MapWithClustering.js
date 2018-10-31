@@ -123,7 +123,13 @@ export default class MapWithClustering extends Component {
     }
 
     getZoomLevel(bbox){
-        return geoViewport.viewport(bbox, [height, width]);
+        const zoom geoViewport.viewport(bbox, [height, width]);
+        
+        if (isNaN(zoom.zoom)) {
+            zoom.zoom = 0;
+        }
+
+        return zoom;
     }
 
     calculateClustersForMap(){
